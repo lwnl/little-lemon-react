@@ -1,0 +1,111 @@
+body {
+  margin: 2rem 5%;
+  background-color: #edefee;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, .active-NavLink {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+header {
+  .logo-container {
+    text-align: center;
+    width: 100%;
+
+    img {
+      height: 128px;
+    }
+  }
+
+  a {
+    color: white;
+  }
+
+  ul {
+    width: 100%;
+    background-color: #495e57;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+    padding-block: 1rem;
+  }
+
+  li {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.home {
+  .banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(http://www.little-lemon-restaurant.com/static/img/restaurant_inside.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    a {
+      border: 2px solid white;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 2rem;
+      font-weight: bold;
+      font-size: large;
+      color: white;
+
+      &:hover {
+        background-color: #495e57;
+      }
+    }
+  }
+
+  .cart-container {
+    .card {
+      padding: 1rem;
+      background-color: antiquewhite;
+      margin-bottom: 1rem;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+      }
+    }
+    @media (min-width: 601px) {
+      ul {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+footer {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+
+  .copy-right {
+    margin-left: auto;
+    width: 50%;
+    text-align: right;
+    padding-block: 0.5rem;
+    border-top: 1px solid black;
+  }
+}

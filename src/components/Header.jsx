@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import CustomNavLink from './CustomNavLink'
 
 const Header = () => {
   return (
@@ -11,11 +11,10 @@ const Header = () => {
       </div>
       <nav>
         <ul>
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/menu">Menu</NavLink></li>
-          <li><NavLink to="/book">Book</NavLink></li>
-          <li><NavLink to="/reservations">Reservations</NavLink></li>
+          <li><CustomNavLink to="/">Home</CustomNavLink></li>
+          <li><CustomNavLink to="/about">About</CustomNavLink></li>
+          <li><CustomNavLink to="/menu">Menu</CustomNavLink></li>
+          <li><CustomNavLink to="/reservations">Reservations</CustomNavLink></li>
         </ul>
       </nav>
     </header>
