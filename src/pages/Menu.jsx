@@ -1,12 +1,19 @@
 import './Menu.css'
+import menuList from '../data/menuList'
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
     <div className="menu-container">
-      <h2>Menu</h2>
       <div className='menu'>
-        {Array.from({length:6}).map((_, idx) => (
-          <div className="menu-item" key={idx}></div>
+        {menuList.map((menuItem) => (
+          <Link to={`/menu/${menuItem.id}`} className="menu-item" key={menuItem.id} target='_blank'>
+            <h4>{menuItem.title}</h4>
+            <div className='image-container'>
+              <img src={menuItem.imageUrl} alt={menuItem.title} />
+            </div>
+            <p>price: ${menuItem.price.toFixed(2)}</p>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,25 +1,38 @@
 .menu-container {
-  padding: 20px;
   text-align: center;
-  background-color: #f2f2f2;
+  margin-bottom: 1rem;
 
   .menu {
     display: grid;
     gap: 20px;
-    padding: 20px;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
   }
 
   .menu-item {
-    background-color: lightgreen;
+    background-color: #2f2e29;
+    color:white;
     aspect-ratio: 3 / 4;
     width: 100%;
-    border: 2px solid transparent;
-    transition: border 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:1rem;
+    transition: transform 0.3s ease-in-out;
 
-    .menu-item:hover {
-      border: 2px solid cornflowerblue;
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    .image-container {
+      padding: 1rem;
+    }
+    
+    img {
+      border-radius: 1rem;
+      width: 100%;
+      aspect-ratio:1;
+      object-fit: cover;
     }
   }
 
