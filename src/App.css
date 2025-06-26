@@ -72,6 +72,7 @@ header {
     justify-content: center;
     align-items: center;
     color: white;
+    padding:1rem;
 
     a {
       border: 2px solid white;
@@ -88,10 +89,21 @@ header {
   }
 
   .cart-container {
+    margin-block: 2rem;
+
     .card {
-      padding: 1rem;
-      background-color: antiquewhite;
-      margin-bottom: 1rem;
+      padding:1rem;
+      flex-grow:1;
+      color:white;
+      background-color: #2F2E29;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap:1rem;
+
+      h2{
+        text-align: center;
+      }
 
       img {
         width: 100%;
@@ -99,6 +111,10 @@ header {
         object-fit: cover;
         display: block;
       }
+    }
+
+    a {
+      color:white;
     }
     @media (min-width: 600px) {
       ul {
