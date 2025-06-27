@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <div className="menu-container">
+      <h1>Menu</h1>
       <div className='menu'>
         {menuList.map((menuItem) => (
           <Link to={`/menu/${menuItem.id}`} className="menu-item" key={menuItem.id} target='_blank'>
