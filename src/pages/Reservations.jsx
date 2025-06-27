@@ -1,8 +1,10 @@
 import "./Reservations.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Reservations = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const defaultData = location.state || {};
 
   function getToday() {
     const today = new Date();
@@ -13,13 +15,15 @@ const Reservations = () => {
   }
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const form = e.target 
+    const form = e.target;
     if (form.checkValidity()) {
-      navigate('/confirm-reservation')
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      navigate("/confirm-reservation", { state: data });
     } else {
-      form.reportValidity()
+      form.reportValidity();
     }
   }
 
@@ -29,20 +33,30 @@ const Reservations = () => {
       <div className="input-area">
         <div>
           <label htmlFor="">Name: </label>
-          <input type="text" name="name" required="true" />
+          <input
+            type="text"
+            name="name"
+            defaultValue={defaultData.name || ""}
+            required
+          />
         </div>
         <div>
           <label htmlFor="">Number of Guests: </label>
-          <input type="number" name="guests" required="true" />
+          <input
+            type="number"
+            name="guestsNumber"
+            defaultValue={defaultData.guestsNumber || ""}
+            required
+          />
         </div>
         <div>
           <label htmlFor="">Reservation Date: </label>
           <input
             type="date"
             name="date"
-            defaultValue={getToday()}
+            defaultValue={defaultData.date || getToday()}
             min={getToday()}
-            required="true"
+            required
           />
         </div>
         <div>
@@ -50,11 +64,12 @@ const Reservations = () => {
           <input
             type="time"
             name="time"
+            defaultValue={defaultData.time || ""}
             min="11:00"
             max="19:00"
             step="3600"
             list="hourOptions"
-            required="true"
+            required
           />
           <datalist id="hourOptions">
             <option value="11:00" />

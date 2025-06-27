@@ -10,9 +10,8 @@ html {
 }
 
 body {
-  margin: 2rem auto;
+  margin-inline: auto;
   max-width: 1200px;
-  min-height: 100svh;
 }
 
 ul {
@@ -29,10 +28,40 @@ a:hover,
   text-underline-offset: 4px;
 }
 
+
+
+button {
+  padding: 5px 8px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #495e57;
+    color: white;
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+}
+
+main {
+  flex-grow: 1;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
 header {
   .logo-container {
     text-align: center;
     width: 100%;
+    padding-top: 2rem;
 
     img {
       height: 128px;
@@ -72,7 +101,7 @@ header {
     justify-content: center;
     align-items: center;
     color: white;
-    padding:1rem;
+    padding: 1rem;
 
     a {
       border: 2px solid white;
@@ -92,16 +121,16 @@ header {
     margin-block: 2rem;
 
     .card {
-      padding:1rem;
-      flex-grow:1;
-      color:white;
-      background-color: #2F2E29;
+      padding: 1rem;
+      flex-grow: 1;
+      color: white;
+      background-color: #2f2e29;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap:1rem;
+      gap: 1rem;
 
-      h2{
+      h2 {
         text-align: center;
       }
 
@@ -114,7 +143,7 @@ header {
     }
 
     a {
-      color:white;
+      color: white;
     }
     @media (min-width: 600px) {
       ul {
