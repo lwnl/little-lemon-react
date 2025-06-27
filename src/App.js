@@ -16,6 +16,9 @@ function App() {
         <Route path="menu" element={<Menu />} />
         <Route path="menu/:id" element={<MenuItemDetail />} />
         <Route path="reservations" element={<Reservations />} />
+        {/* <Route path="confirm-reservation" element={<ConfirmReservation />} />
+        <Route path="reservation-success" element={<ReservationSuccess />} />
+        <Route path="*" element={<NotFound />} /> */}
       </Route>
     </Routes>
   );
