@@ -19,7 +19,7 @@ const ConfirmReservation = () => {
         {reservationData.time}.
       </p>
       <div>
-        <CustomNavLink>
+        <CustomNavLink to="/reservation-success">
           <button>Confirm</button>
         </CustomNavLink>
         <CustomNavLink to="/reservations" state={reservationData}>
